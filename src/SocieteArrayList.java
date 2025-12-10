@@ -35,15 +35,19 @@ public class SocieteArrayList implements IGestion<Employe>, IRechercheAvancee<Em
             System.out.println(e.toString());
         }
     }
-    /*@Override
-    public void trierEmployeParId(){
-
-    } //Comparable
     @Override
-    public void trierEmployeParNomDepartementEtGrade(){
+    public void trierEmployeParId(){//Comparable
+        Collections.sort (employees);
+    }
+    @Override
+    public void trierEmployeParNomDépartementEtGrade(){//Comparato
+        nameComparator byName = new nameComparator();
+        ageComparator byAge = new ageComparator();
 
-    } //Comparato
-    */
+        Collections.sort(employees,byName);
+        Collections.sort(employees,byAge);
+    }
+
 
     @Override
     public List<Employe> rechercherParDepartement (String nomDepartement) {
@@ -57,6 +61,7 @@ public class SocieteArrayList implements IGestion<Employe>, IRechercheAvancee<Em
 
         return result;
     }
+
 
 
 }
